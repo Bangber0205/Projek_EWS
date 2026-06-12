@@ -1,60 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EWS - Megathrust Pesisir Cilacap</title> 
-  <link rel="stylesheet" href="assets/style.css">
-  <script src="https://unpkg.com/feather-icons"></script>
-</head>
-<body>
-  <nav>
-    <div class="brand">
-      <div class="logo" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-          <path d="M3 12c4-6 14-6 18 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-          <path d="M6 12c3-4 9-4 12 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="12" cy="12" r="1.6" fill="#fff"/>
-        </svg>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MegaLert – EWS Megathrust Pesisir Cilacap</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M3 12c4-6 14-6 18 0"
+              stroke="#fff"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M6 12c3-4 9-4 12 0"
+              stroke="#fff"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <circle cx="12" cy="12" r="1.6" fill="#fff" />
+          </svg>
+        </div>
+        <div class="teks">
+          <h1>MegaLert</h1>
+          <figcaption>Early Warning System - Megathrust</figcaption>
+        </div>
       </div>
-      <div class="teks">
-        <h1>MegaLert</h1>
-        <figcaption>Early Warning System - Megathrust</figcaption>
+
+      <button class="menu-toggle" aria-label="Menu" id="menuToggleBtn">
+        <i data-feather="menu"></i>
+      </button>
+
+      <div class="nav" id="navMenu">
+        <a href="info.html"><button class="started">Open Dashboard</button></a>
+        <a href="live-location.html"
+          ><button class="visit">Evacuation Map</button></a
+        >
       </div>
-    </div>
+    </nav>
 
-    <button class="menu-toggle" aria-label="Menu">&#9776;</button>
+    <main>
+      <div class="content">
+        <h1>EARLY WARNING SYSTEM</h1>
+        <p>
+          Early Warning System (EWS) adalah suatu rangkaian proses terintegrasi
+          yang bertujuan untuk mendeteksi, menganalisis, dan menyebarkan
+          informasi peringatan mengenai potensi bencana secara cepat dan akurat,
+          agar masyarakat dan pihak berwenang dapat melakukan tindakan
+          pencegahan atau evakuasi sebelum bencana terjadi.
+        </p>
+      </div>
+    </main>
 
-    <div class="nav">
-      <a href="info.html"><button class="started">Get Started</button></a>
-      <a href="info.html"><button class="visit">Visit our Social Media</button></a>
-    </div>
-  </nav>
+    <footer>
+      <div class="info-footer">
+        <p>Made with : <span>Visual Studio Code</span></p>
+        <p>Supported by : <span>Leaflet.js</span></p>
+      </div>
+      <div class="watermark">
+        <p>&copy;2026 MegaLert. All Rights Reserved.</p>
+      </div>
+    </footer>
 
-  <main>
-    <div class="content">
-      <h1>EARLY WARNING SYSTEM</h1>
-      <p>Early Warning System (EWS) adalah suatu rangkaian proses terintegrasi yang bertujuan untuk mendeteksi, menganalisis, dan menyebarkan informasi peringatan mengenai potensi bencana secara cepat dan akurat, agar masyarakat dan pihak berwenang dapat melakukan tindakan pencegahan atau evakuasi sebelum bencana terjadi.</p>
-    </div>
-  </main>
-
-  <footer>
-    <div class="info-footer">
-      <p>Made with : Visual Studio Code</p>
-      <span>Supported by : Leaflet.js</span>
-    </div>
-    <div class="watermark">
-      <p>&copy;2025 EWS Pride. All Right Reserved.</p>
-    </div>
-  </footer>
-
-  <script>
-    feather.replace();
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav");
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("active");
-    });
-  </script>
-</body>
+    <script>
+      feather.replace();
+      const toggle = document.getElementById("menuToggleBtn");
+      const nav = document.getElementById("navMenu");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        const icon = toggle.querySelector("svg");
+        if (nav.classList.contains("active")) {
+          toggle.innerHTML = '<i data-feather="x"></i>';
+        } else {
+          toggle.innerHTML = '<i data-feather="menu"></i>';
+        }
+        feather.replace();
+      });
+    </script>
+  </body>
 </html>

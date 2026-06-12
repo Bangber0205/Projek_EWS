@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EWS Megathrust – Pesisir Cilacap</title>
+  <title>EWS Megathrust – Pesisir Cilacap Dashboard</title>
   <meta name="description" content="Sistem Peringatan Dini (Early Warning System) bencana megathrust & tsunami untuk wilayah pesisir Cilacap, Jawa Tengah.">
   <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <link rel="preconnect" href="https://{s}.tile.openstreetmap.org" crossorigin>
@@ -12,19 +12,21 @@
 </head>
 <body>
   <div class="app">
-    <header>
+    <header id="mainHeader">
       <div class="brand">
         <div class="logo" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12c4-6 14-6 18 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M6 12c3-4 9-4 12 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="1.6" fill="#fff"/></svg>
         </div>
         <div>
-          <div class="title">MegaLert - EWS Megathrust</div>
-          <div class="subtitle">Simulasi & prototipe siap-integrasi</div>
+          <div class="title">MegaLert</div>
+          <div class="subtitle">EWS Megathrust Cilacap – Prototype</div>
         </div>
       </div>
-      <a href="index.html" class="landing">View Landing Page</a>
-      <a href="live-location.html" class="evakuasi">Live Location - Evakuasi</a>
-      <div class="chip" id="statusChip">Status: NORMAL</div>
+      <div class="header-nav" id="headerNav">
+        <a href="index.html" class="landing">Landing Page</a>
+        <a href="live-location.html" class="evakuasi">Live Location & Evacuation</a>
+        <div class="chip" id="statusChip">Status: NORMAL</div>
+      </div>
     </header>
 
     <div class="grid">
@@ -35,7 +37,7 @@
         <div class="controls">
           <div class="field"><label>Bahasa</label>
             <select id="lang">
-              <option value="id" selected>Bahasa</option>
+              <option value="id" selected>Bahasa Indonesia</option>
               <option value="en">English</option>
             </select>
           </div>
@@ -56,21 +58,21 @@
           <div class="muted" id="statusReason">Tidak ada anomali signifikan.</div>
         </div>
         <div class="kpi">
-          <div class="card"><div class="label">Magnitudo terdeteksi (simulasi)</div><div class="value" id="kpiMag">-</div></div>
+          <div class="card"><div class="label">Magnitudo (simulasi)</div><div class="value" id="kpiMag">-</div></div>
           <div class="card"><div class="label">Kedalaman (km)</div><div class="value" id="kpiDepth">-</div></div>
           <div class="card"><div class="label">Tide Gauge (m)</div><div class="value" id="kpiTide">-</div></div>
           <div class="card"><div class="label">Wave/Buoy (m)</div><div class="value" id="kpiWave">-</div></div>
         </div>
-        <div style="margin-top:10px">
-          <div class="label" style="margin-bottom:6px">Skor Risiko (0–100)</div>
+        <div class="gauge-container">
+          <div class="label" style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Skor Risiko (0–100)</div>
           <div class="gauge"><span id="gaugeBar"></span></div>
         </div>
-        <h3 style="margin-top:14px">Riwayat Peringatan</h3>
+        <h3>Riwayat Peringatan</h3>
         <div class="alerts" id="alerts"></div>
-         <h3 style="margin-top:14px">Detail Gempa</h3>
-          <div class="quake-box" id="quakeDetails">
-            <p>Menunggu data gempa...</p>
-          </div>
+        <h3>Detail Gempa Terakhir</h3>
+        <div class="quake-box" id="quakeDetails">
+          <p>Menunggu data gempa...</p>
+        </div>
         <div class="footer">Catatan: Ini Prototype. Belum terintegrasi dengan API real time map BMKG.</div>
       </section>
     </div>
@@ -96,6 +98,6 @@
           }
         });
       }
-</script>
+  </script>
 </body>
 </html>

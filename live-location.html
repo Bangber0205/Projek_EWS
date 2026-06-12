@@ -11,10 +11,10 @@
 <body>
   <header>
     <div class="brand">
-    <div class="logo" aria-hidden="true">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12c4-6 14-6 18 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M6 12c3-4 9-4 12 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="1.6" fill="#fff"/></svg>
-    </div>
-    <p style="font-weight: 800;">MegaLert - EWS Megathrust</p>
+      <div class="logo" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12c4-6 14-6 18 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M6 12c3-4 9-4 12 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="1.6" fill="#fff"/></svg>
+      </div>
+      <p style="font-weight: 800;">MegaLert - EWS Megathrust</p>
     </div>
     <h2>Live Location & Rute Evakuasi</h2>
     <a href="info.html" class="back">Kembali ke Page</a>
@@ -23,30 +23,32 @@
   <div id="map"></div>
 
   <div class="panel">
-    <label for="evacSelect">Pilih Titik Evakuasi:</label>
-    <select id="evacSelect"></select>
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <label for="evacSelect">Pilih Titik Evakuasi:</label>
+      <select id="evacSelect"></select>
+    </div>
 
     <h3>Langkah Mitigasi Darurat:</h3>
     <div class="steps">
         <div class="l1">
           <p>Segera bergerak menuju titik evakuasi terdekat atau alternatif yang aman.</p>
-          <img src="" alt="">
+          <img src="assets/images/evac_step1.jpg" alt="Titik evakuasi terdekat">
         </div>
         <div class="l2">
           <p>Hindari area pantai, jembatan, dan bangunan tinggi yang berisiko runtuh.</p>
-          <img src="" alt="">
+          <img src="assets/images/evac_step2.jpg" alt="Hindari pantai & jembatan">
         </div>
         <div class="l3">
           <p>Siapkan tas darurat berisi dokumen penting, obat, makanan ringan, air, senter, powerbank.</p>
-          <img src="" alt="">
+          <img src="assets/images/evac_step3.jpg" alt="Tas darurat mitigasi">
         </div>
         <div class="l4">
           <p>Ikuti jalur evakuasi resmi & arahan BPBD setempat.</p>
-          <img src="" alt="">
+          <img src="assets/images/evac_step4.jpg" alt="Jalur evakuasi resmi">
         </div>
         <div class="l5">
           <p>Jika sudah aman di lokasi tinggi, tetap waspada terhadap gempa susulan.</p>
-          <img src="" alt="">
+          <img src="assets/images/evac_step5.jpg" alt="Waspada gempa susulan">
         </div>
     </div>
   </div>
